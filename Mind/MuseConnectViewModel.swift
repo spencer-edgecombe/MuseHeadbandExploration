@@ -1,82 +1,86 @@
 //
 //  MuseConnectViewModel.swift
-//  Mind
+//  MuseStatsMac
 //
-//  Created by Spencer Edgecombe on 2023-11-10.
+//  Created by Gair Shields on 2023-01-03.
 //
 
-import Foundation
 import SwiftUI
-import Combine
 
-class MuseConnectViewModel: ObservableObject {
-    // Published properties to update the UI
-    var museMap: [String: IXNMuse] = [:] {
-        didSet {
-            RunLoop.main.perform { [weak self] in
-                guard let self else { return }
-                self.museList = Array(self.museMap.keys.sorted())
-            }
-        }
-    }
-    @Published var museList: [String] = []
+class MuseConnectViewModel: IXNLogListener, ObservableObject {
+    var museManager: IXNMuseManager?
+    var museListener: IXNMuseListener?
+    var dataListener: IXNMuseDataListener?
+    var connectionListener: IXNMuseConnectionListener?
+    var selectedMuse: IXNMuse?
     @Published var selectedMuseName: String?
-    @Published var logMessages: [String] = []
-    @Published var isConnected: Bool = false
-
-    // Muse manager and listeners
-    private var museManager: IXNMuseManager?
-    private var dataListener: IXNMuseDataListener?
-    private var connectionListener: IXNMuseConnectionListener?
-    private var museMapener: IXNMuseListener?
-
+    @Published var museNames: [String] = []
+    var logManager: IXNLogManager?
+    var museList = [String: IXNMuse]()
+    @Published var logs: [String] = []
+    var points: [UnitPoint] = []
+  
     init() {
-        setupMuseManager()
-    }
-
-    private func setupMuseManager() {
-        // Initialize the Muse manager and listeners
+        self.museNames.removeAll()
+        self.logManager = IXNLogManager.instance()
+        self.logManager?.setLogListener(self)
         self.museManager = IXNMuseManagerMac()
-        self.museMapener = MuseListener(viewModel: self)
-        self.dataListener = DataListener(viewModel: self)
-        self.connectionListener = ConnectionListener(viewModel: self)
-
-        // Setup the manager
+        self.museListener = MuseListener(parent: self)
+        self.dataListener = DataListener(parent: self)
+        self.connectionListener = ConnectionListener(parent: self)
+        
         self.museManager?.removeFromList(after: 10)
-        self.museManager?.setMuseListener(self.museMapener)
-    }
-    
-    func startListening() {
+        self.museManager?.setMuseListener(self.museListener)
         self.museManager?.startListening()
     }
-
-    func updateMuseList() {
-        DispatchQueue.main.async {
-            self.museMap.removeAll()
-            guard let muses = self.museManager?.getMuses() else {
-                return
-            }
-            for muse in muses {
-                let name = muse.getName()
-                self.museMap[name] = muse
-                self.log(message: "Found \(name) with ID: \(muse.getMacAddress())")
+    
+    func museListChanged() {
+        museList.removeAll()
+        DispatchQueue.main.async { [weak self] in
+            guard let self else { return }
+            self.museNames.removeAll()
+            self.selectedMuseName = nil
+            if let muses = self.museManager?.getMuses() {
+                for muse in muses {
+                    self.museList[muse.getName()] = muse
+                    self.museNames.append(muse.getName())
+                    self.log(message: "Found \(muse.getName()) with ID: \(muse.getMacAddress())")
+                }
+                if self.museNames.count > 0 && self.selectedMuseName == nil {
+                    self.selectedMuseName = self.museNames.first
+                }
             }
         }
     }
-
-    func connectToSelectedMuse() {
-        guard let selectedName = selectedMuseName, let muse = museMap[selectedName] else { return }
-        if muse.getConnectionState() == .disconnected {
-            self.museManager?.stopListening()
-            muse.unregisterAllListeners()
-            muse.register(self.connectionListener)
-            muse.register(self.dataListener, type: .eeg)
-            muse.setPreset(IXNMusePreset.preset21)
-            muse.runAsynchronously()
+    
+    func getSelectedItem(combo: NSComboBox) -> String? {
+        if combo.indexOfSelectedItem != -1 {
+            return combo.itemObjectValue(at: combo.indexOfSelectedItem) as? String
+        }
+        return nil
+    }
+    
+    func onScanClick() {
+        self.museManager?.stopListening()
+        self.museManager?.startListening()
+    }
+    
+    func onConnectClick() {
+        if let m = selectedMuseName {
+            if let muse = museList[m] {
+                if muse.getConnectionState() == .disconnected {
+                    self.museManager?.stopListening()
+                    muse.unregisterAllListeners()
+                    muse.register(self.connectionListener)
+                    muse.register(self.dataListener, type: .eeg)
+                    muse.setPreset(IXNMusePreset.preset21)
+                    muse.runAsynchronously()
+                }
+            }
         }
     }
-
-    func disconnectAllMuses() {
+    
+    func onDisconnectClick() {
         if let muses = self.museManager?.getMuses() {
             for muse in muses {
                 if muse.getConnectionState() == .connected {
@@ -85,60 +89,81 @@ class MuseConnectViewModel: ObservableObject {
             }
         }
     }
-
-    func log(message: String) {
-        DispatchQueue.main.async {
-            self.logMessages.insert(message, at: 0)
+    
+    func receive(_ packet: IXNMuseConnectionPacket, muse: IXNMuse?) {
+        if packet.previousConnectionState == .connecting && packet.currentConnectionState == .disconnected {
+            muse?.unregisterAllListeners()
+            log(message: "\(muse?.getName() ?? "") disconnected")
+            self.museManager?.startListening()
+        }
+        if packet.previousConnectionState == .connecting && packet.currentConnectionState == .connected {
+            log(message: "\(muse?.getName() ?? "") connected")
         }
     }
-
+    
+    func receive(_ packet: IXNMuseDataPacket?, muse: IXNMuse?) {
+        if packet != nil && packet!.packetType() == .eeg {
+//            points.append(packet.)
+        }
+    }
+    
+    func receiveLog(_ log: IXNLogPacket) {
+        self.logs.insert(log.message, at: 0)
+    }
+    
+    func log(message: String) {
+        self.logManager?.writeLog(IXNSeverity.sevDebug, raw: false, tag: "", message: message)
+    }
+    
     deinit {
-        // Clean-up code
+//        self.graphView?.stop()
+        self.museManager?.stopListening()
+        if let muses = self.museManager?.getMuses() {
+            for muse in muses {
+                muse.unregisterAllListeners()
+                if muse.getConnectionState() == .connected {
+                    muse.disconnect()
+                }
+            }
+        }
     }
 }
 
-// Listener classes
 class MuseListener: IXNMuseListener {
-    func museListChanged() {
-        
+    var parent: MuseConnectViewModel
+    
+    init(parent: MuseConnectViewModel){
+        self.parent = parent
     }
     
-    weak var viewModel: MuseConnectViewModel?
-
-    init(viewModel: MuseConnectViewModel) {
-        self.viewModel = viewModel
-    }
-
-    func museMapChanged() {
-        viewModel?.updateMuseList()
+    func museListChanged() {
+        self.parent.museListChanged()
     }
 }
 
 class ConnectionListener: IXNMuseConnectionListener {
-    weak var viewModel: MuseConnectViewModel?
-
-    init(viewModel: MuseConnectViewModel) {
-        self.viewModel = viewModel
+    var parent: MuseConnectViewModel
+    
+    init(parent: MuseConnectViewModel){
+        self.parent = parent
     }
-
+    
     func receive(_ packet: IXNMuseConnectionPacket, muse: IXNMuse?) {
-        // Handle connection updates
+        parent.receive(packet, muse: muse)
     }
 }
 
 class DataListener: IXNMuseDataListener {
+    var parent: MuseConnectViewModel
     
-    weak var viewModel: MuseConnectViewModel?
-
-    init(viewModel: MuseConnectViewModel) {
-        self.viewModel = viewModel
+    init(parent: MuseConnectViewModel){
+        self.parent = parent
     }
-
+    
     func receive(_ packet: IXNMuseDataPacket?, muse: IXNMuse?) {
-        // Handle data updates
+        parent.receive(packet, muse: muse)
     }
     
     func receive(_ packet: IXNMuseArtifactPacket, muse: IXNMuse?) {
-        
     }
 }

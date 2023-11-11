@@ -12,13 +12,33 @@ struct MuseConnectView: View {
     var body: some View {
         HStack(alignment: .top) {
             VStack(alignment: .leading) {
-                Group {
-                    Image(systemName: viewModel.isConnected ? "waveform.slash" : "waveform")
-                        .imageScale(.large)
-                }
-                Spacer()
+                    ForEach(viewModel.museNames, id: \.self) { name in
+                        HStack {
+                            Button {
+                                viewModel.selectedMuseName = name
+                            } label: {
+                                if name == viewModel.selectedMuseName {
+                                    Image(systemName: "checkmark.circle")
+                                } else {
+                                    Image(systemName: "circle")
+                                }
+                            }
+                            Text(name)
+                        }
+                    }
             }
             Spacer()
+        }
+        .toolbar {
+            Button("Scan") {
+                viewModel.onScanClick()
+            }
+            Button("Connect") {
+                viewModel.onConnectClick()
+            }
+            Button("Disconnect") {
+                viewModel.onDisconnectClick()
+            }
         }
         .padding()
         .navigationSplitViewStyle(.balanced)
