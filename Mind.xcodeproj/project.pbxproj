@@ -1,0 +1,664 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		630F13D82AFC397D004A822D /* MindApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630F13D72AFC397D004A822D /* MindApp.swift */; };
+		630F13DA2AFC397D004A822D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630F13D92AFC397D004A822D /* ContentView.swift */; };
+		630F13DC2AFC397D004A822D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630F13DB2AFC397D004A822D /* Item.swift */; };
+		630F13DE2AFC397E004A822D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 630F13DD2AFC397E004A822D /* Assets.xcassets */; };
+		630F13E12AFC397E004A822D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 630F13E02AFC397E004A822D /* Preview Assets.xcassets */; };
+		630F13EC2AFC397E004A822D /* MindTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630F13EB2AFC397E004A822D /* MindTests.swift */; };
+		630F13F62AFC397E004A822D /* MindUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630F13F52AFC397E004A822D /* MindUITests.swift */; };
+		630F13F82AFC397E004A822D /* MindUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630F13F72AFC397E004A822D /* MindUITestsLaunchTests.swift */; };
+		630F14082AFC3999004A822D /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630F14072AFC3999004A822D /* CoreBluetooth.framework */; };
+		630F140A2AFC39A4004A822D /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 630F14092AFC39A4004A822D /* libc++.tbd */; };
+		630F140C2AFC39BA004A822D /* MuseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630F140B2AFC39BA004A822D /* MuseManager.swift */; };
+		630F140E2AFC3A30004A822D /* EEGGraphViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630F140D2AFC3A30004A822D /* EEGGraphViewState.swift */; };
+		630F144A2AFC434A004A822D /* Muse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630F14052AFC3990004A822D /* Muse.framework */; };
+		630F144B2AFC434A004A822D /* Muse.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 630F14052AFC3990004A822D /* Muse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		63FF24552AFC4A8600198C4E /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FF24542AFC4A8600198C4E /* GraphView.swift */; };
+		63FF24572AFEF32800198C4E /* MuseConnectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FF24562AFEF32800198C4E /* MuseConnectViewModel.swift */; };
+		63FF24592AFEF3D500198C4E /* MuseConnectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FF24582AFEF3D500198C4E /* MuseConnectView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		630F13E82AFC397E004A822D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 630F13CC2AFC397D004A822D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 630F13D32AFC397D004A822D;
+			remoteInfo = Mind;
+		};
+		630F13F22AFC397E004A822D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 630F13CC2AFC397D004A822D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 630F13D32AFC397D004A822D;
+			remoteInfo = Mind;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		630F144C2AFC434A004A822D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				630F144B2AFC434A004A822D /* Muse.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		630F13D42AFC397D004A822D /* Mind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mind.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		630F13D72AFC397D004A822D /* MindApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindApp.swift; sourceTree = "<group>"; };
+		630F13D92AFC397D004A822D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		630F13DB2AFC397D004A822D /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		630F13DD2AFC397E004A822D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		630F13E02AFC397E004A822D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		630F13E22AFC397E004A822D /* Mind.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mind.entitlements; sourceTree = "<group>"; };
+		630F13E72AFC397E004A822D /* MindTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MindTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		630F13EB2AFC397E004A822D /* MindTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindTests.swift; sourceTree = "<group>"; };
+		630F13F12AFC397E004A822D /* MindUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MindUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		630F13F52AFC397E004A822D /* MindUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindUITests.swift; sourceTree = "<group>"; };
+		630F13F72AFC397E004A822D /* MindUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		630F14052AFC3990004A822D /* Muse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Muse.framework; path = ../Muse/Muse.framework; sourceTree = "<group>"; };
+		630F14072AFC3999004A822D /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		630F14092AFC39A4004A822D /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		630F140B2AFC39BA004A822D /* MuseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseManager.swift; sourceTree = "<group>"; };
+		630F140D2AFC3A30004A822D /* EEGGraphViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EEGGraphViewState.swift; sourceTree = "<group>"; };
+		630F14452AFC3EC5004A822D /* Mind-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mind-Bridging-Header.h"; sourceTree = "<group>"; };
+		63FF24542AFC4A8600198C4E /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		63FF24562AFEF32800198C4E /* MuseConnectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseConnectViewModel.swift; sourceTree = "<group>"; };
+		63FF24582AFEF3D500198C4E /* MuseConnectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseConnectView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		630F13D12AFC397D004A822D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				630F140A2AFC39A4004A822D /* libc++.tbd in Frameworks */,
+				630F144A2AFC434A004A822D /* Muse.framework in Frameworks */,
+				630F14082AFC3999004A822D /* CoreBluetooth.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		630F13E42AFC397E004A822D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		630F13EE2AFC397E004A822D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		630F13CB2AFC397D004A822D = {
+			isa = PBXGroup;
+			children = (
+				630F14452AFC3EC5004A822D /* Mind-Bridging-Header.h */,
+				630F13D62AFC397D004A822D /* Mind */,
+				630F13EA2AFC397E004A822D /* MindTests */,
+				630F13F42AFC397E004A822D /* MindUITests */,
+				630F13D52AFC397D004A822D /* Products */,
+				630F14042AFC3990004A822D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		630F13D52AFC397D004A822D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				630F13D42AFC397D004A822D /* Mind.app */,
+				630F13E72AFC397E004A822D /* MindTests.xctest */,
+				630F13F12AFC397E004A822D /* MindUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		630F13D62AFC397D004A822D /* Mind */ = {
+			isa = PBXGroup;
+			children = (
+				630F13D72AFC397D004A822D /* MindApp.swift */,
+				630F13D92AFC397D004A822D /* ContentView.swift */,
+				630F140B2AFC39BA004A822D /* MuseManager.swift */,
+				63FF24562AFEF32800198C4E /* MuseConnectViewModel.swift */,
+				63FF24582AFEF3D500198C4E /* MuseConnectView.swift */,
+				630F140D2AFC3A30004A822D /* EEGGraphViewState.swift */,
+				63FF24542AFC4A8600198C4E /* GraphView.swift */,
+				630F13DB2AFC397D004A822D /* Item.swift */,
+				630F13DD2AFC397E004A822D /* Assets.xcassets */,
+				630F13E22AFC397E004A822D /* Mind.entitlements */,
+				630F13DF2AFC397E004A822D /* Preview Content */,
+			);
+			path = Mind;
+			sourceTree = "<group>";
+		};
+		630F13DF2AFC397E004A822D /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				630F13E02AFC397E004A822D /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		630F13EA2AFC397E004A822D /* MindTests */ = {
+			isa = PBXGroup;
+			children = (
+				630F13EB2AFC397E004A822D /* MindTests.swift */,
+			);
+			path = MindTests;
+			sourceTree = "<group>";
+		};
+		630F13F42AFC397E004A822D /* MindUITests */ = {
+			isa = PBXGroup;
+			children = (
+				630F13F52AFC397E004A822D /* MindUITests.swift */,
+				630F13F72AFC397E004A822D /* MindUITestsLaunchTests.swift */,
+			);
+			path = MindUITests;
+			sourceTree = "<group>";
+		};
+		630F14042AFC3990004A822D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				630F14092AFC39A4004A822D /* libc++.tbd */,
+				630F14072AFC3999004A822D /* CoreBluetooth.framework */,
+				630F14052AFC3990004A822D /* Muse.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		630F13D32AFC397D004A822D /* Mind */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 630F13FB2AFC397E004A822D /* Build configuration list for PBXNativeTarget "Mind" */;
+			buildPhases = (
+				630F13D02AFC397D004A822D /* Sources */,
+				630F13D12AFC397D004A822D /* Frameworks */,
+				630F13D22AFC397D004A822D /* Resources */,
+				630F144C2AFC434A004A822D /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Mind;
+			productName = Mind;
+			productReference = 630F13D42AFC397D004A822D /* Mind.app */;
+			productType = "com.apple.product-type.application";
+		};
+		630F13E62AFC397E004A822D /* MindTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 630F13FE2AFC397E004A822D /* Build configuration list for PBXNativeTarget "MindTests" */;
+			buildPhases = (
+				630F13E32AFC397E004A822D /* Sources */,
+				630F13E42AFC397E004A822D /* Frameworks */,
+				630F13E52AFC397E004A822D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				630F13E92AFC397E004A822D /* PBXTargetDependency */,
+			);
+			name = MindTests;
+			productName = MindTests;
+			productReference = 630F13E72AFC397E004A822D /* MindTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		630F13F02AFC397E004A822D /* MindUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 630F14012AFC397E004A822D /* Build configuration list for PBXNativeTarget "MindUITests" */;
+			buildPhases = (
+				630F13ED2AFC397E004A822D /* Sources */,
+				630F13EE2AFC397E004A822D /* Frameworks */,
+				630F13EF2AFC397E004A822D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				630F13F32AFC397E004A822D /* PBXTargetDependency */,
+			);
+			name = MindUITests;
+			productName = MindUITests;
+			productReference = 630F13F12AFC397E004A822D /* MindUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		630F13CC2AFC397D004A822D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					630F13D32AFC397D004A822D = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					630F13E62AFC397E004A822D = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 630F13D32AFC397D004A822D;
+					};
+					630F13F02AFC397E004A822D = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 630F13D32AFC397D004A822D;
+					};
+				};
+			};
+			buildConfigurationList = 630F13CF2AFC397D004A822D /* Build configuration list for PBXProject "Mind" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 630F13CB2AFC397D004A822D;
+			productRefGroup = 630F13D52AFC397D004A822D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				630F13D32AFC397D004A822D /* Mind */,
+				630F13E62AFC397E004A822D /* MindTests */,
+				630F13F02AFC397E004A822D /* MindUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		630F13D22AFC397D004A822D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				630F13E12AFC397E004A822D /* Preview Assets.xcassets in Resources */,
+				630F13DE2AFC397E004A822D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		630F13E52AFC397E004A822D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		630F13EF2AFC397E004A822D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		630F13D02AFC397D004A822D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				630F13DA2AFC397D004A822D /* ContentView.swift in Sources */,
+				630F140C2AFC39BA004A822D /* MuseManager.swift in Sources */,
+				630F13DC2AFC397D004A822D /* Item.swift in Sources */,
+				630F140E2AFC3A30004A822D /* EEGGraphViewState.swift in Sources */,
+				630F13D82AFC397D004A822D /* MindApp.swift in Sources */,
+				63FF24552AFC4A8600198C4E /* GraphView.swift in Sources */,
+				63FF24572AFEF32800198C4E /* MuseConnectViewModel.swift in Sources */,
+				63FF24592AFEF3D500198C4E /* MuseConnectView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		630F13E32AFC397E004A822D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				630F13EC2AFC397E004A822D /* MindTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		630F13ED2AFC397E004A822D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				630F13F82AFC397E004A822D /* MindUITestsLaunchTests.swift in Sources */,
+				630F13F62AFC397E004A822D /* MindUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		630F13E92AFC397E004A822D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 630F13D32AFC397D004A822D /* Mind */;
+			targetProxy = 630F13E82AFC397E004A822D /* PBXContainerItemProxy */;
+		};
+		630F13F32AFC397E004A822D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 630F13D32AFC397D004A822D /* Mind */;
+			targetProxy = 630F13F22AFC397E004A822D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		630F13F92AFC397E004A822D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		630F13FA2AFC397E004A822D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		630F13FC2AFC397E004A822D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Mind/Mind.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Mind/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Muse.framework/Headers";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "We gotta";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = spenny.Mind;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SWIFT_MODULE_NAME)-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		630F13FD2AFC397E004A822D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Mind/Mind.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Mind/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Muse.framework/Headers";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "We gotta";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = spenny.Mind;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SWIFT_MODULE_NAME)-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		630F13FF2AFC397E004A822D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = spenny.MindTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mind.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Mind";
+			};
+			name = Debug;
+		};
+		630F14002AFC397E004A822D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = spenny.MindTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mind.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Mind";
+			};
+			name = Release;
+		};
+		630F14022AFC397E004A822D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = spenny.MindUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Mind;
+			};
+			name = Debug;
+		};
+		630F14032AFC397E004A822D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = spenny.MindUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Mind;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		630F13CF2AFC397D004A822D /* Build configuration list for PBXProject "Mind" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				630F13F92AFC397E004A822D /* Debug */,
+				630F13FA2AFC397E004A822D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		630F13FB2AFC397E004A822D /* Build configuration list for PBXNativeTarget "Mind" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				630F13FC2AFC397E004A822D /* Debug */,
+				630F13FD2AFC397E004A822D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		630F13FE2AFC397E004A822D /* Build configuration list for PBXNativeTarget "MindTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				630F13FF2AFC397E004A822D /* Debug */,
+				630F14002AFC397E004A822D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		630F14012AFC397E004A822D /* Build configuration list for PBXNativeTarget "MindUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				630F14022AFC397E004A822D /* Debug */,
+				630F14032AFC397E004A822D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 630F13CC2AFC397D004A822D /* Project object */;
+}
