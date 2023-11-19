@@ -5,43 +5,41 @@
 //  Created by Gair Shields on 2023-01-07.
 //
 
-import Cocoa
-import CoreGraphics
+import SwiftUI
 
 struct DataPoint {
     var value: Double
     var time: Int64
 }
 
-class EEGGraphView: NSView {
+class EEGGraphView {
     let lock = NSLock()
     let maxPoints = 3500
     let maxSignal = 1800.0
     let refreshRate = 1.0 / 30
     let dataChannels: [IXNEeg] = [.EEG1, .EEG2, .EEG3, .EEG4]
-    let darkColor: [IXNEeg: NSColor] = [.EEG1: .systemGreen, .EEG2: .red, .EEG3: .systemBlue, .EEG4: .white]
-    let lightColor: [IXNEeg: NSColor] = [.EEG1: .systemGreen, .EEG2: .purple, .EEG3: .systemBlue, .EEG4: .darkGray]
+    let darkColor: [IXNEeg: Color] = [.EEG1: .green, .EEG2: .red, .EEG3: .blue, .EEG4: .white]
+    let lightColor: [IXNEeg: Color] = [.EEG1: .green, .EEG2: .purple, .EEG3: .blue, .EEG4: .gray]
     var dataPoints = [IXNEeg: [DataPoint]]()
     var updateTimer: Timer?
     
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
+    init() {
         for ch in dataChannels {
             dataPoints[ch] = [DataPoint]()
         }
     }
     
-    override func draw(_ rect: NSRect) {
-        super.draw(rect)
-        for ch in dataChannels {
-            drawChannel(rect, channel: ch)
-        }
-        let context = NSGraphicsContext.current!.cgContext
-        context.setStrokeColor(NSColor.darkGray.cgColor)
-        context.setLineWidth(2.0)
-        context.addRect(rect)
-        context.strokePath()
-    }
+//    override func draw(_ rect: NSRect) {
+//        super.draw(rect)
+//        for ch in dataChannels {
+//            drawChannel(rect, channel: ch)
+//        }
+//        let context = NSGraphicsContext.current!.cgContext
+//        context.setStrokeColor(Color.darkGray.cgColor)
+//        context.setLineWidth(2.0)
+//        context.addRect(rect)
+//        context.strokePath()
+//    }
     
     func drawChannel(_ rect: NSRect, channel: IXNEeg) {
         lock.lock()
@@ -71,7 +69,7 @@ class EEGGraphView: NSView {
         }
         
         let context = NSGraphicsContext.current!.cgContext
-        context.setStrokeColor(graphColor(channel: channel).cgColor)
+//        context.setStrokeColor(graphColor(channel: channel).cgColor)
         context.setLineWidth(1.0)
         
         // Move to the first point
@@ -111,7 +109,7 @@ class EEGGraphView: NSView {
         updateTimer = nil
     }
     
-    func graphColor(channel: IXNEeg) -> NSColor {
+    func graphColor(channel: IXNEeg) -> Color {
         if NSApp.effectiveAppearance.name == NSAppearance.Name.darkAqua ||
             NSApp.effectiveAppearance.name == NSAppearance.Name.vibrantDark {
             return darkColor[channel]!

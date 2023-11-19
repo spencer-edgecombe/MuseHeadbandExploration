@@ -26,13 +26,10 @@ struct MindApp: App {
     var connectViewModel: MuseConnectViewModel = MuseConnectViewModel()
     var body: some Scene {
         WindowGroup {
-            NavigationSplitView {
-                MuseConnectView(viewModel: connectViewModel)
-                    .listStyle(.plain)
-            } detail: {
-                
-            }
+            MuseConnectView(viewModel: connectViewModel)
         }
         .modelContainer(sharedModelContainer)
+        .windowResizability(.contentSize)
+
     }
 }

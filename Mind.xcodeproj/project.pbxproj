@@ -19,11 +19,11 @@
 		630F140A2AFC39A4004A822D /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 630F14092AFC39A4004A822D /* libc++.tbd */; };
 		630F140C2AFC39BA004A822D /* MuseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630F140B2AFC39BA004A822D /* MuseManager.swift */; };
 		630F140E2AFC3A30004A822D /* EEGGraphViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630F140D2AFC3A30004A822D /* EEGGraphViewState.swift */; };
-		630F144A2AFC434A004A822D /* Muse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630F14052AFC3990004A822D /* Muse.framework */; };
-		630F144B2AFC434A004A822D /* Muse.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 630F14052AFC3990004A822D /* Muse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		63FF24552AFC4A8600198C4E /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FF24542AFC4A8600198C4E /* GraphView.swift */; };
 		63FF24572AFEF32800198C4E /* MuseConnectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FF24562AFEF32800198C4E /* MuseConnectViewModel.swift */; };
 		63FF24592AFEF3D500198C4E /* MuseConnectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FF24582AFEF3D500198C4E /* MuseConnectView.swift */; };
+		BBFAD94F2B0103E40078421F /* Muse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBFAD94D2B0103DD0078421F /* Muse.framework */; };
+		BBFAD9502B0103E40078421F /* Muse.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BBFAD94D2B0103DD0078421F /* Muse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +50,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				630F144B2AFC434A004A822D /* Muse.framework in Embed Frameworks */,
+				BBFAD9502B0103E40078421F /* Muse.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,7 +70,6 @@
 		630F13F12AFC397E004A822D /* MindUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MindUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		630F13F52AFC397E004A822D /* MindUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindUITests.swift; sourceTree = "<group>"; };
 		630F13F72AFC397E004A822D /* MindUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		630F14052AFC3990004A822D /* Muse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Muse.framework; path = ../Muse/Muse.framework; sourceTree = "<group>"; };
 		630F14072AFC3999004A822D /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		630F14092AFC39A4004A822D /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		630F140B2AFC39BA004A822D /* MuseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseManager.swift; sourceTree = "<group>"; };
@@ -79,6 +78,7 @@
 		63FF24542AFC4A8600198C4E /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		63FF24562AFEF32800198C4E /* MuseConnectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseConnectViewModel.swift; sourceTree = "<group>"; };
 		63FF24582AFEF3D500198C4E /* MuseConnectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseConnectView.swift; sourceTree = "<group>"; };
+		BBFAD94D2B0103DD0078421F /* Muse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Muse.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +87,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				630F140A2AFC39A4004A822D /* libc++.tbd in Frameworks */,
-				630F144A2AFC434A004A822D /* Muse.framework in Frameworks */,
+				BBFAD94F2B0103E40078421F /* Muse.framework in Frameworks */,
 				630F14082AFC3999004A822D /* CoreBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,9 +177,9 @@
 		630F14042AFC3990004A822D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BBFAD94D2B0103DD0078421F /* Muse.framework */,
 				630F14092AFC39A4004A822D /* libc++.tbd */,
 				630F14072AFC3999004A822D /* CoreBluetooth.framework */,
-				630F14052AFC3990004A822D /* Muse.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -483,10 +483,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Mind/Mind.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Mind/Preview Content\"";
+				DEVELOPMENT_TEAM = DB85A83894;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -520,10 +522,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Mind/Mind.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Mind/Preview Content\"";
+				DEVELOPMENT_TEAM = DB85A83894;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
